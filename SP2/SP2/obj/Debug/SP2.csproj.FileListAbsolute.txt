@@ -37,3 +37,12 @@ F:\Programs\SP2\SP2\obj\Debug\SP2.csproj.GenerateResource.Cache
 E:\GitHub\TestRepository\SP2\SP2\bin\Debug\SP2.exe.config
 E:\GitHub\TestRepository\SP2\SP2\obj\Debug\SP2.exe
 E:\GitHub\TestRepository\SP2\SP2\obj\Debug\SP2.pdb
+E:\GitHub\TestRepository\SP2\SP2\bin\Debug\SP2.exe
+E:\GitHub\TestRepository\SP2\SP2\bin\Debug\SP2.pdb
+E:\GitHub\TestRepository\SP2\SP2\obj\Debug\MainWindow.baml
+E:\GitHub\TestRepository\SP2\SP2\obj\Debug\MainWindow.g.cs
+E:\GitHub\TestRepository\SP2\SP2\obj\Debug\App.g.cs
+E:\GitHub\TestRepository\SP2\SP2\obj\Debug\SP2_MarkupCompile.cache
+E:\GitHub\TestRepository\SP2\SP2\obj\Debug\SP2.g.resources
+E:\GitHub\TestRepository\SP2\SP2\obj\Debug\SP2.Properties.Resources.resources
+E:\GitHub\TestRepository\SP2\SP2\obj\Debug\SP2.csproj.GenerateResource.Cache

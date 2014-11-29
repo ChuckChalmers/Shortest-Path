@@ -27,16 +27,18 @@ namespace SP2
 
         private void btnPath_Click(object sender, RoutedEventArgs e)
         {
-            //string[][] neighbors = new string[19][];
-            //neighbors = Nodes.Storage();
-            string source = "";
-            string destination = "";
-            string visited = "";
-            source = txtSource.Text.ToUpper();
-            destination = txtDest.Text.ToUpper();
-            Path.Pathing(source, destination, visited);
-            //Nodes.Search(neighbors, source, destination, "");
-            //lstPaths.Items.Add(validPath);
+            List<Node> nodeList = new List<Node>();
+            nodeList = Node.nodeBuilder();
+            Node source = null;
+            Node destination = null;
+            source = nodeList.FirstOrDefault(x => x.Name == txtSource.Text.ToUpper());
+            destination = nodeList.FirstOrDefault(y => y.Name == txtDest.Text.ToUpper());
+            string visited = source.Name;
+            Path.Pathing(source, destination, visited, nodeList);
+            foreach(string p in Globals.validPaths)
+            {
+                lstPaths.Items.Add(p);
+            }
         }
 
     }
