@@ -10,21 +10,17 @@ namespace SP2
     {
         public static void Pathing(Node source, Node destination, string visited, List<Node> nodeList)
         {
-            //Node[] neighbors = new Node[source.neighbors.Length];
             visited = visited + source.Name;
             
             foreach(Node n in source.neighbors)
             {
+                if (source == destination)
+                {
+                    Globals.validPaths.Add(visited);
+                    return;
+                }
                 if (!visited.Contains(n.Name) == true)
                 {
-                    if(source == destination)
-                    {
-                        if (Globals.validPaths.Contains(visited) == false)
-                        {
-                            Globals.validPaths.Add(visited);
-                        }
-                        return;
-                    }
                     Path.Pathing(n, destination, visited, nodeList);
                 }
             }
