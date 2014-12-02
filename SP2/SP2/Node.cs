@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SP2
 {
-    class Node
+   public class Node
     {
         public string Name;
-        public Node[] neighbors { get;  set; }
+        public Neighbor[] neighbors { get;  set; }
 
 
         public Node(string _Name)
@@ -38,25 +38,25 @@ namespace SP2
             Node Q = new Node("Q");
             Node R = new Node("R");
             Node S = new Node("S");
-            A.neighbors = new Node[] { B, I };
-            B.neighbors = new Node[] { A, C, D };
-            C.neighbors = new Node[] { D, E };
-            D.neighbors = new Node[] { B, C, G };
-            E.neighbors = new Node[] { C, F };
-            F.neighbors = new Node[] { E, I };
-            G.neighbors = new Node[] { D, H };
-            H.neighbors = new Node[] { G, M, N };
-            I.neighbors = new Node[] { A, F, K };
-            J.neighbors = new Node[] { K, L };
-            K.neighbors = new Node[] { I, J, L };
-            L.neighbors = new Node[] { J, K, N };
-            M.neighbors = new Node[] { H, N };
-            N.neighbors = new Node[] { H, L, M, P };
-            O.neighbors = new Node[] { P, Q, S };
-            P.neighbors = new Node[] { N, O, S };
-            Q.neighbors = new Node[] { R, S };
-            R.neighbors = new Node[] { Q, S };
-            S.neighbors = new Node[] { O, P, Q, R };
+            A.neighbors = new Neighbor[] {new Neighbor(B, 70), new Neighbor(I, 100)};
+            B.neighbors = new Neighbor[] {new Neighbor(A, 70), new Neighbor(C, 10), new Neighbor(D, 25)};
+            C.neighbors = new Neighbor[] {new Neighbor(B, 10), new Neighbor(D, 15), new Neighbor(E, 5)};
+            D.neighbors = new Neighbor[] {new Neighbor(B, 25), new Neighbor(C, 15), new Neighbor(G, 45)};
+            E.neighbors = new Neighbor[] {new Neighbor(C, 5), new Neighbor(F, 5)};
+            F.neighbors = new Neighbor[] {new Neighbor(E, 5), new Neighbor(I, 35)};
+            G.neighbors = new Neighbor[] {new Neighbor(D, 45), new Neighbor(H, 10)};
+            H.neighbors = new Neighbor[] {new Neighbor(G, 10), new Neighbor(M, 45), new Neighbor(N, 160)};
+            I.neighbors = new Neighbor[] {new Neighbor(A, 100),new Neighbor(F, 35), new Neighbor(K, 30)};
+            J.neighbors = new Neighbor[] {new Neighbor(K, 20), new Neighbor(L, 7)};
+            K.neighbors = new Neighbor[] {new Neighbor(I, 30), new Neighbor(J, 20), new Neighbor(L, 90)};
+            L.neighbors = new Neighbor[] {new Neighbor(J, 7), new Neighbor(K, 90), new Neighbor(N, 60)};
+            M.neighbors = new Neighbor[] {new Neighbor(H, 45), new Neighbor(N, 210)};
+            N.neighbors = new Neighbor[] {new Neighbor(H, 160), new Neighbor(L, 60), new Neighbor(M, 210), new Neighbor(P, 12) };
+            O.neighbors = new Neighbor[] {new Neighbor(P, 180), new Neighbor(Q, 65), new Neighbor(S, 300)};
+            P.neighbors = new Neighbor[] {new Neighbor(N, 12), new Neighbor(O, 180), new Neighbor(S, 10)};
+            Q.neighbors = new Neighbor[] {new Neighbor(O, 65), new Neighbor(R, 10), new Neighbor (S, 75)};
+            R.neighbors = new Neighbor[] {new Neighbor(Q, 10), new Neighbor(S, 60)};
+            S.neighbors = new Neighbor[] {new Neighbor(O, 300), new Neighbor(P, 10), new Neighbor(Q, 75), new Neighbor(R, 60)};
             List<Node> nodeList = new List<Node>()
             {
                 A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S

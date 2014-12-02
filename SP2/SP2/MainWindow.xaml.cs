@@ -34,10 +34,11 @@ namespace SP2
             Node source = null;
             Node destination = null;
             string visited = "";
+            int totalDist = 0;
             source = nodeList.FirstOrDefault(x => x.Name == txtSource.Text.ToUpper());
             destination = nodeList.FirstOrDefault(y => y.Name == txtDest.Text.ToUpper());
-            Path.Pathing(source, destination, visited, nodeList);
-            foreach(string p in Globals.validPaths)
+            Path.Pathing(source, destination, visited, nodeList, totalDist);
+            foreach (string p in Globals.validPaths)
             {
                 lstPaths.Items.Add(p);
             }

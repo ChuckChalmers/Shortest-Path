@@ -8,20 +8,21 @@ namespace SP2
 {
     class Path
     {
-        public static void Pathing(Node source, Node destination, string visited, List<Node> nodeList)
+        public static void Pathing(Node source, Node destination, string visited, List<Node> nodeList, int totalDist)
         {
             visited = visited + source.Name;
             
-            foreach(Node n in source.neighbors)
+            foreach(Neighbor n in source.neighbors)
             {
                 if (source == destination)
                 {
-                    Globals.validPaths.Add(visited);
+                    Globals.validPaths.Add(visited + " " + totalDist.ToString());
                     return;
                 }
-                if (!visited.Contains(n.Name) == true)
+                if (!visited.Contains(n.neighbor.Name) == true)
                 {
-                    Path.Pathing(n, destination, visited, nodeList);
+                    totalDist = totalDist + n.distance;
+                    Path.Pathing(n.neighbor, destination, visited, nodeList, totalDist);
                 }
             }
         }
