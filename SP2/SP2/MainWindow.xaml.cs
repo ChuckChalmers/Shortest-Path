@@ -29,19 +29,18 @@ namespace SP2
         {
             lstPaths.Items.Clear();
             Globals.validPaths.Clear();
-            List<Node> nodeList = new List<Node>();
-            nodeList = Node.nodeBuilder();
+            Globals.nodeList = Node.nodeBuilder();
             Node source = null;
             Node destination = null;
             string visited = "";
-            int totalDist = 0;
-            source = nodeList.FirstOrDefault(x => x.Name == txtSource.Text.ToUpper());
-            destination = nodeList.FirstOrDefault(y => y.Name == txtDest.Text.ToUpper());
-            Path.Pathing(source, destination, visited, nodeList, totalDist);
+            source = Neighbor.ToNode(txtSource.Text.ToUpper());
+            destination = Neighbor.ToNode(txtDest.Text.ToUpper());
+            Path.Pathing(source, destination, visited);
             foreach (string p in Globals.validPaths)
             {
                 lstPaths.Items.Add(p);
             }
+            lblPathAnswer.Content = Globals.path + " " + Globals.shortestpath.ToString();
         }
 
     }

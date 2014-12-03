@@ -11,8 +11,10 @@
         <TextBox x:Name="txtDest" HorizontalAlignment="Left" Height="30" Margin="90,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Grid.Column="1"/>
         <Label x:Name="lblSource" Content="Source" HorizontalAlignment="Left" Height="30" Margin="43,65,0,0" VerticalAlignment="Top" Width="80"/>
         <Label x:Name="lblDest" Content="Destination" HorizontalAlignment="Left" Height="30" Margin="90,65,0,0" VerticalAlignment="Top" Width="80" Grid.Column="1"/>
-        <ListBox x:Name="lstPaths" HorizontalAlignment="Left" Height="170" Margin="43,95,0,0" VerticalAlignment="Top" Width="424" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="lstPaths" HorizontalAlignment="Left" Height="170" Margin="43,95,0,0" VerticalAlignment="Top" Width="199"/>
         <Button x:Name="btnPath" Content="Calculate Path" HorizontalAlignment="Left" Height="27" Margin="170,283,0,0" VerticalAlignment="Top" Width="163" Grid.ColumnSpan="2" Click="btnPath_Click"/>
+        <Label x:Name="lblShortestPath" Grid.ColumnSpan="2" Content="Shortest Path" HorizontalAlignment="Left" Height="31" Margin="258,95,0,0" VerticalAlignment="Top" Width="86"/>
+        <Label x:Name="lblPathAnswer" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Height="30" Margin="287,126,0,0" VerticalAlignment="Top" Width="140"/>
 
     </Grid>
 </Window>

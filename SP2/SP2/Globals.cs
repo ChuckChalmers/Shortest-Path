@@ -9,5 +9,8 @@ namespace SP2
     public static class Globals
     {
         public static List<string> validPaths = new List<string>();
+        public static List<Node> nodeList = Node.nodeBuilder();
+        public static int shortestpath = new int();
+        public static string path = null;
     }
 }
