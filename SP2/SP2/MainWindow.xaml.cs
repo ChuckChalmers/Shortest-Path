@@ -27,20 +27,39 @@ namespace SP2
 
         private void btnPath_Click(object sender, RoutedEventArgs e)
         {
+            lblPathAnswer.Content = "";
             lstPaths.Items.Clear();
-            Globals.validPaths.Clear();
-            Globals.nodeList = Node.nodeBuilder();
+            Globals.Initialize();
             Node source = null;
             Node destination = null;
             string visited = "";
             source = Neighbor.ToNode(txtSource.Text.ToUpper());
             destination = Neighbor.ToNode(txtDest.Text.ToUpper());
-            Path.Pathing(source, destination, visited);
-            foreach (string p in Globals.validPaths)
+            if (Globals.nodeList.Contains(source))
             {
-                lstPaths.Items.Add(p);
+                if (Globals.nodeList.Contains(destination))
+                {
+                    Path.Pathing(source, destination, visited);
+                    foreach (string p in Globals.validPaths)
+                    {
+                        lstPaths.Items.Add(p);
+                    }
+                    lblPathAnswer.Content = Globals.path + " " + Globals.shortestpath.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid Destination", "Error");
+                    txtDest.Clear();
+                    txtDest.Focus();
+                }
             }
-            lblPathAnswer.Content = Globals.path + " " + Globals.shortestpath.ToString();
+            else
+            {
+                MessageBox.Show("Please enter a valid Source", "Error");
+                txtSource.Clear();
+                txtSource.Focus();
+            }
+            
         }
 
     }
